@@ -32,9 +32,14 @@ describe('/log route', () => {
       method: 'POST',
       timeout: 5000,
       headers: headers,
+      data: {
+        "datetime": new Date(),
+        "eco2": 400,
+        "tvoc": 10
+      }
     });
 
     assert.equal(res.status, '200');
-    assert.equal(res.data.message, 'Logging...');
+    assert.equal(res.data.message, 'Logged successfully');
   });
 });
