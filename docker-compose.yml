@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    app:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        environment:
+            PORT: 3000
+            _API_KEY: mytestpresharedkey
+        ports:
+            - 3000:3000
+        stdin_open: true
+        command: npm run dev
