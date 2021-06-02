@@ -22,7 +22,7 @@ ENV _DATASET_ID ""
 ENV _TABLE_ID ""
 
 # Copy local code to the container image.
-COPY . ./
+COPY ./src/ ./
 
 # Run the web service on container startup.
 CMD ["node", "index.js"]
