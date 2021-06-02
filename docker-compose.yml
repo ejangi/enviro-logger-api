@@ -5,9 +5,13 @@ services:
         build: .
         volumes:
             - .:/usr/src/app
+            - ./service-account.json:/tmp/service-account.json
         environment:
             PORT: 3000
+            GOOGLE_APPLICATION_CREDENTIALS: /tmp/service-account.json
             _API_KEY: mytestpresharedkey
+            _DATASET_ID: "Enviro"
+            _TABLE_ID: "Test"
         ports:
             - 3000:3000
         stdin_open: true

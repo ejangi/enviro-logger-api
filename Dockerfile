@@ -18,6 +18,8 @@ RUN npm install --production
 # Set envionment variables
 ENV PORT "8080"
 ENV _API_KEY ""
+ENV _DATASET_ID ""
+ENV _TABLE_ID ""
 
 # Copy local code to the container image.
 COPY . ./

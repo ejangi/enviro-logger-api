@@ -16,6 +16,7 @@
         "node": ">=11.14"
     },
     "dependencies": {
+        "@google-cloud/bigquery": "^5.6.0",
         "express": "^4.17.1"
     },
     "devDependencies": {
