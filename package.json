@@ -2,17 +2,21 @@
     "name": "nodejs-cloud-run-hello-world",
     "version": "0.0.1",
     "description": "Hello World application for Cloud Run",
+    "author": "James Angus <james@ejangi.com>",
+    "license": "BSD",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
         "dev": "nodemon index.js",
         "lint": "eslint **.js",
         "fix": "eslint --fix *.js",
-        "test": "mocha test/*.test.js --check-leaks --timeout 5000",
-        "test-watch": "nodemon -x 'mocha test/*.test.js --check-leaks --timeout 5000'"
+        "test": "mocha test/*.test.js --check-leaks --timeout 5000"
     },
-    "author": "Google LLC",
-    "license": "0BSD",
+    "nodemonConfig": {
+        "events": {
+            "restart": "sleep 3; npm run test"
+        }
+    },
     "engines": {
         "node": ">=11.14"
     },
